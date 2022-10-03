@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clientes</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="funciones.js"></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container menu">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1>Clientes</h1>
+
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="clientes.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ventas.html">Ventas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container formulario">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="formulario clientes">
+            <form>
+              <div class="form-group">
+                <label for="inputID">ID</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputID"
+                  placeholder="Digite ID"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="inputNombre">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputNombre"
+                  placeholder="Digite Nombre"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="inputApellidos">Apellidos</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputApellidos"
+                  placeholder="Digite Apellidos"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="inputTel">Teléfono</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputTel"
+                  placeholder="Digite Teléfono"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputEmail"
+                  placeholder="Digite Email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="inputCiudad">Ciudad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputCiudad"
+                  placeholder="Digite Ciudad"
+                />
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="limpiarC()"
+                >
+                  Limpiar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="crearC()"
+                >
+                  Crear
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="buscarC()"
+                >
+                  Buscar ID
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="editarC()"
+                >
+                  Editar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="eliminarC()"
+                >
+                  Eliminar ID
+                </button>
+                <a
+                  class="btn btn-primary"
+                  onclick="crearListClientes()"
+                  href="#contenedorList"
+                  >Mostrar Listado</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container tabla" id="contenedorList" style="display: none">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="listadoC listado">
+            <h2>Listado</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellidos</th>
+                  <th scope="col">Teléfono</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Ciudad</th>
+                </tr>
+              </thead>
+              <tbody id="listClientes"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
