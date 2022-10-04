@@ -11,3 +11,45 @@ body{
     /* margin-bottom: 10px; */
     
 }
+
+.section.top{
+    z-index: 10;
+    position: relative;
+}
+
+.container-fluid.slider>.row>div{
+    padding: 0;
+}
+
+.container-fluid.slider img{
+    height: calc(100vh - 96px);
+    object-fit: cover;
+}
+
+.menu a{
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px #000;
+}
+
+.menu a:hover{
+    color: #ffea2c;
+    
+}
+
+h1{
+    color: #fff;
+    text-shadow: 2px 2px 6px #000;
+}
+
+body>.container{
+    padding-top: 30px;
+}
+
+.accordion-button{
+    font-weight: 700;
+}
+
+form .form-group{
+    padding-bottom: 15px;
+}
