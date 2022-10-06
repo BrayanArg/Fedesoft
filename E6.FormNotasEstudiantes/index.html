@@ -21,8 +21,8 @@
     ></script>
   </head>
   <body>
-    <div class="container">
-      <form class="row mt-5 mb-5" >
+    <div class="container formulario">
+      <form class="row mt-5 mb-5">
         <div class="mb-3 col-6">
           <label for="inputId" class="form-label">Id</label>
           <input type="number" class="form-control" id="inputId" required />
@@ -96,13 +96,145 @@
 
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="inputCheck" />
-          <label class="form-check-label" for="inputCheck">Estoy de acuerdo con el tratamiento de mis datos.</label>
+          <label class="form-check-label" for="inputCheck"
+            >Estoy de acuerdo con el tratamiento de mis datos.</label
+          >
         </div>
         <div class="col-auto">
           <button type="submit" class="btn btn-primary">Enviar</button>
-
         </div>
       </form>
     </div>
+
+    <div class="container notas-modal">
+      <!-- Button trigger modal -->
+      <div class="mb-5">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#modalNotas"
+        >
+          Notas Estudiantes
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modalNotas"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Notas</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="row">
+                <div class="col-12 mb-3">
+                  <label for="inputN1" class="form-label">Nota 1</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Digite nota"
+                    id="inputN1"
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="inputN2" class="form-label">Nota 2</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Digite nota"
+                    id="inputN2"
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="inputN3" class="form-label">Nota 3</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Digite nota"
+                    id="inputN3"
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="notaFinal" class="form-label">Nota Final</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="notaFinal"
+                    disabled
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="btn-calcular"
+                onclick="calcularNota()"
+              >
+                Calcular
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container notificacion-toast">
+      <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button> -->
+
+      <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div
+          id="liveToast"
+          class="toast hide"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <!-- <img src="..." class="rounded me-2" alt="..."> -->
+            <strong class="me-auto">Notificación!</strong>
+            <small>1 mins ago</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Operación éxitosa!</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let toastTrigger = document.getElementById("btn-calcular");
+      let toastLiveExample = document.getElementById("liveToast");
+      if (toastTrigger) {
+        toastTrigger.addEventListener("click", function () {
+          var toast = new bootstrap.Toast(toastLiveExample);
+          toast.show();
+        });
+      }
+    </script>
   </body>
 </html>
