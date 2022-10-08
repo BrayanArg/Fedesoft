@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Afiliados</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <!-- CSS only Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"
+    />
+  </head>
+  <body>
+    <section class="top-bar">
+      <div class="container menu-principal">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h1>CRUD EPS</h1>
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="inicio.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="afiliados.html">Afiliados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="empleadores.html">Empleadores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="independientes.html"
+                  >Independientes</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form class="row" id="formulario">
+              <h2>Afiliados</h2>
+              <div class="mb-3 col-12">
+                <label for="inputId" class="form-label"
+                  >Tipo de identificación</label
+                >
+                <select name="" id="inputId" class="form-select">
+                  <option selected>Seleccione...</option>
+                  <option value="Cédula de ciudadanía">
+                    Cédula de ciudadanía
+                  </option>
+                  <option value="Cédula de extranjería">
+                    Cédula de extranjería
+                  </option>
+                  <option value="Tarjeta de identidad">
+                    Tarjeta de identidad
+                  </option>
+                  <option value="Registro civil">Registro civil</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="mb-3 col-12">
+                <label for="inputNum" class="form-label"
+                  >Número de identificación</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputNum"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 col-12">
+                <label for="inputNombre" class="form-label">Paciente</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputNombre"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 col-12">
+                <label for="inputFecha" class="form-label">Fecha</label>
+                <input
+                  type="datetime-local"
+                  class="form-control"
+                  id="inputFecha"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 col-12">
+                <label for="inputEsp" class="form-label">Especialidad</label>
+                <select name="" id="inputEsp" class="form-select">
+                  <option selected>Seleccione...</option>
+                  <option value="Médico general">Médico general</option>
+                  <option value="Oftalmología">Oftalmología</option>
+                  <option value="Pediatría">Pediatría</option>
+                  <option value="Ginecología">Ginecología</option>
+                  <option value="Odontología">Odontología</option>
+                </select>
+              </div>
+
+              <div class="w-auto">
+                <input
+                  type="submit"
+                  class="form-control btn btn-primary"
+                  value="Crear"
+                  id="btn-enviar"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <table class="table" id="tabla-afiliados">
+              <thead>
+                <tr>
+                  <th>Tipo Identifiación</th>
+                  <th scope="col">Número identificación</th>
+                  <th scope="col">Paciente</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Especialidad</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="tabla-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div
+              class="modal fade"
+              id="modalEdit"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Actualizar datos
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row" id="formularioA">
+                        
+                        <div class="mb-3 col-12">
+                          <label for="inputIdA" class="form-label"
+                            >Tipo de identificación</label
+                          >
+                          <select name="" id="inputIdA" class="form-select" disabled>
+                            <option selected>Seleccione...</option>
+                            <option value="Cédula de ciudadanía">
+                              Cédula de ciudadanía
+                            </option>
+                            <option value="Cédula de extranjería">
+                              Cédula de extranjería
+                            </option>
+                            <option value="Tarjeta de identidad">
+                              Tarjeta de identidad
+                            </option>
+                            <option value="Registro civil">Registro civil</option>
+                            <option value="Otro">Otro</option>
+                          </select>
+                        </div>
+          
+                        <div class="mb-3 col-12">
+                          <label for="inputNumA" class="form-label"
+                            >Número de identificación</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="inputNumA"
+                            required
+                            disabled
+                          />
+                        </div>
+          
+                        <div class="mb-3 col-12">
+                          <label for="inputNombreA" class="form-label">Paciente</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputNombreA"
+                            required
+                          />
+                        </div>
+          
+                        <div class="mb-3 col-12">
+                          <label for="inputFechaA" class="form-label">Fecha</label>
+                          <input
+                            type="datetime-local"
+                            class="form-control"
+                            id="inputFechaA"
+                            required
+                          />
+                        </div>
+          
+                        <div class="mb-3 col-12">
+                          <label for="inputEspA" class="form-label">Especialidad</label>
+                          <select name="" id="inputEspA" class="form-select">
+                            <option selected>Seleccione...</option>
+                            <option value="Médico general">Médico general</option>
+                            <option value="Oftalmología">Oftalmología</option>
+                            <option value="Pediatría">Pediatría</option>
+                            <option value="Ginecología">Ginecología</option>
+                            <option value="Odontología">Odontología</option>
+                          </select>
+                        </div>
+          
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                    <input
+                      type="button"
+                      class="btn btn-primary"
+                      id="btn-actualizar"
+                      value="Actualizar"
+                      onclick="actualizar()"
+                      data-bs-dismiss="modal"
+                    />
+                    <button
+                      id="btn-registrar"
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                      
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="funcionesAfiliados.js"></script>
+  </body>
+</html>
