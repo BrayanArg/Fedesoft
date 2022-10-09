@@ -32,7 +32,7 @@ function crear(e) {
       localStorage.setItem("afiliados", JSON.stringify(pacientes));
     } else {
       alert(
-        "Usuario existente, por favor digite otro númedo de identificación."
+        "Usuario existente, por favor digite otro número de identificación."
       );
     }
   }
