@@ -16,7 +16,7 @@ document.getElementById("formulario").addEventListener("submit", crear);
 
 function crear(e){
     // debugger;
-    document.getElementById("pageInicio").click();
+    
     let nombre = document.getElementById("inputNombre").value;
     let apellido = document.getElementById("inputApe").value;
     let tel = document.getElementById("inputTel").value;
@@ -38,14 +38,17 @@ function crear(e){
         if(elementIndex == -1){
             users.push(user);
             localStorage.setItem("usuarios", JSON.stringify(users));
+            document.getElementById("pageInicio").click();
+            document.getElementById("formulario").reset();
         }else{
             alert("Usuario existente, por favor digite otro correo.");
+            
         }
       
     }
     
     
-    document.getElementById("formulario").reset();
+    
     e.preventDefault();
     
     console.log("Usuarios creado Correctamente")

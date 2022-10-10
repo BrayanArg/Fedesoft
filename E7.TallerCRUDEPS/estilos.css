@@ -1,0 +1,164 @@
+/* // -------- LOGIN ------------- */
+
+body{
+    min-height: 100vh;
+}
+
+body.page-registro{
+    background-image: url(imagenes/background-registro.jpg);
+    background-size: cover;
+}
+
+.container.modal-login .modal-dialog{
+    margin-top: 5%;
+}
+
+.modal-login .modal-body{
+background: linear-gradient(0deg, rgba(111,143,255,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+form label{
+    font-weight: 700;
+}
+
+.modal-login #btn-success{
+    background: #23ae3c;
+}
+
+.form-registro .registro{
+    max-width: 700px;
+    margin: 7% auto;
+    border-radius: 10px;
+    padding: 15px 12px 0; 
+    box-shadow: 0px 5px 20px -4px #000;
+    overflow: hidden;
+    background: #fff;
+}
+
+.form-registro h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-registro form{
+  background: linear-gradient(0deg, rgba(111,143,255,1) 0%, rgba(255,255,255,1) 100%);
+    padding: 15px 0;
+    justify-content: flex-end;
+}
+
+/* // ----------------- INICIO ----------------- */
+
+.top-bar{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px -4px #000;
+}
+
+section.content{
+    padding-top: 100px;
+}
+
+body:not(.page-registro){
+   background: linear-gradient(0deg, rgba(183,199,255,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.top-bar a{
+    color: #4e7aff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.top-bar a:hover{
+    color: #351ce0;
+    font-weight: 700;
+    background: #f6f6f6;
+}
+
+.slider .carousel-item img{
+    height: calc(100vh - 100px);
+    object-fit: cover;
+}
+
+.slider>.row>div{
+    padding: 0;
+}
+
+.cards-especialidades{
+    padding: 60px 0;
+}
+
+.cards-especialidades .card{
+    height: 100%;
+}
+
+.cards-especialidades h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cards-especialidades .cardsEsp{
+    justify-content: center;
+}
+
+.cards-especialidades .card{
+    box-shadow: 0px 5px 14px -4px #000;
+    margin: 5px 5px;
+    border: 0px;
+    transition: 0.1s;
+}
+
+.cards-especialidades .card img{
+    height: 300px;
+    object-fit: cover;
+}
+
+.cards-especialidades .card:hover{
+    cursor: pointer;
+    margin: 0 0 10px;
+}
+
+.cards-especialidades .cardsEsp .col{
+    margin-bottom: 15px;
+}
+
+.cards-especialidades .card.mg:hover{
+    background: #ff4444;
+}
+
+.cards-especialidades .card.oft:hover{
+    background: #98e261;
+}
+
+.cards-especialidades .card.pdt:hover{
+    background: #4ffbfa;
+}
+
+.cards-especialidades .card.gnc:hover{
+    background: #ff70f2;
+}
+
+.cards-especialidades .card.odt:hover{
+    background: #ff8f00;
+}
+
+/* // ---------- FORMULARIOS REGISTROS -------- */
+
+.form-crear{
+    padding: 30px 0;
+}
+
+.tabla-resultados{
+    padding: 30px 0 60px;
+}
+
+.tabla-resultados .dataTables_wrapper{
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.modal-edit .modal-body{
+    background: linear-gradient(0deg, rgba(111,143,255,1) 0%, rgba(255,255,255,1) 100%);
+}

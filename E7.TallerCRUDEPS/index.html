@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     
 </head>
-<body onload="cargarModal()">
+<body onload="cargarModal()" class="page-registro">
     <div class="container modal-login">
         <a href="inicio.html" id="pageInicio"></a>
 
@@ -73,10 +73,10 @@
               </form>
             </div>
             <div class="modal-footer">
-              <input type="button" class="btn btn-primary" id="btn-registrar" value="Ingresar" onclick="login()">
+              <input type="button" class="btn btn-primary" id="btn-ingresar" value="Ingresar" onclick="login()">
               <button id="btn-registrar"
                 type="button"
-                class="btn btn-secondary"
+                class="btn btn-success"
                 data-bs-dismiss="modal"
                 onclick="registrar()"
               >
@@ -89,42 +89,50 @@
     </div>
 
     <div class="container form-registro" id="container-registro" style="display: none;">
-        
-        <form class="row" id="formulario">
-            <div class="mb-3 col-6">
-                <label for="inputNombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="inputNombre" required />
-              </div>
-
-            <div class="mb-3 col-6">
-                <label for="inputApe" class="form-label">Apellidos</label>
-                <input type="text" class="form-control" id="inputApe" required />
-              </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="registro">
+            <h2>Formulario de registro</h2>
+            <form class="row" id="formulario">
+                <div class="mb-3 col-6">
+                    <label for="inputNombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre" required />
+                  </div>
+    
+                <div class="mb-3 col-6">
+                    <label for="inputApe" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="inputApe" required />
+                  </div>
+                
+                <div class="mb-3 col-6">
+                    <label for="inputTel" class="form-label">Teléfono</label>
+                    <input type="number" class="form-control" id="inputTel" required />
+                  </div>
+    
+                <div class="mb-3 col-6">
+                    <label for="inputFecha" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="inputFecha" required />
+                  </div> 
+    
+                <div class="mb-3 col-6">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" required />
+                  </div>
+                
+                <div class="mb-3 col-6">
+                    <label for="inputPass" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="inputPass" required />
+                  </div>
+                  
+                <div class="w-auto">
+                    <input type="submit" class="form-control btn btn-primary" value="Enviar" id="btn-enviar">
+                </div>  
+            </form>
             
-            <div class="mb-3 col-6">
-                <label for="inputTel" class="form-label">Teléfono</label>
-                <input type="number" class="form-control" id="inputTel" required />
-              </div>
+          </div>
 
-            <div class="mb-3 col-6">
-                <label for="inputFecha" class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="inputFecha" required />
-              </div> 
-
-            <div class="mb-3 col-6">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail" required />
-              </div>
-            
-            <div class="mb-3 col-6">
-                <label for="inputPass" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="inputPass" required />
-              </div>
-              
-            <div class="w-auto">
-                <input type="submit" class="form-control btn btn-primary" value="Enviar" id="btn-enviar">
-            </div>  
-        </form>
+        </div>
+      </div>
     </div>
 
     <!-- <div class="container notificacion-toast">

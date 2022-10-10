@@ -46,12 +46,12 @@
     </section>
 
     <section class="content">
-      <div class="container">
+      <div class="container form-crear">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <form class="row" id="formulario">
               <h2>Afiliados</h2>
-              <div class="mb-3 col-12">
+              <div class="mb-3 col-6">
                 <label for="inputId" class="form-label"
                   >Tipo de identificación</label
                 >
@@ -71,7 +71,7 @@
                 </select>
               </div>
 
-              <div class="mb-3 col-12">
+              <div class="mb-3 col-6">
                 <label for="inputNum" class="form-label"
                   >Número de identificación</label
                 >
@@ -93,7 +93,7 @@
                 />
               </div>
 
-              <div class="mb-3 col-12">
+              <div class="mb-3 col-6">
                 <label for="inputFecha" class="form-label">Fecha</label>
                 <input
                   type="datetime-local"
@@ -103,7 +103,7 @@
                 />
               </div>
 
-              <div class="mb-3 col-12">
+              <div class="mb-3 col-6">
                 <label for="inputEsp" class="form-label">Especialidad</label>
                 <select name="" id="inputEsp" class="form-select">
                   <option selected>Seleccione...</option>
@@ -128,7 +128,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container tabla-resultados">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <table class="table" id="tabla-afiliados">
@@ -149,7 +149,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container modal-edit">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div
@@ -174,73 +174,82 @@
                   </div>
                   <div class="modal-body">
                     <form class="row" id="formularioA">
-                        
-                        <div class="mb-3 col-12">
-                          <label for="inputIdA" class="form-label"
-                            >Tipo de identificación</label
-                          >
-                          <select name="" id="inputIdA" class="form-select" disabled>
-                            <option selected>Seleccione...</option>
-                            <option value="Cédula de ciudadanía">
-                              Cédula de ciudadanía
-                            </option>
-                            <option value="Cédula de extranjería">
-                              Cédula de extranjería
-                            </option>
-                            <option value="Tarjeta de identidad">
-                              Tarjeta de identidad
-                            </option>
-                            <option value="Registro civil">Registro civil</option>
-                            <option value="Otro">Otro</option>
-                          </select>
-                        </div>
-          
-                        <div class="mb-3 col-12">
-                          <label for="inputNumA" class="form-label"
-                            >Número de identificación</label
-                          >
-                          <input
-                            type="number"
-                            class="form-control"
-                            id="inputNumA"
-                            required
-                            disabled
-                          />
-                        </div>
-          
-                        <div class="mb-3 col-12">
-                          <label for="inputNombreA" class="form-label">Paciente</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputNombreA"
-                            required
-                          />
-                        </div>
-          
-                        <div class="mb-3 col-12">
-                          <label for="inputFechaA" class="form-label">Fecha</label>
-                          <input
-                            type="datetime-local"
-                            class="form-control"
-                            id="inputFechaA"
-                            required
-                          />
-                        </div>
-          
-                        <div class="mb-3 col-12">
-                          <label for="inputEspA" class="form-label">Especialidad</label>
-                          <select name="" id="inputEspA" class="form-select">
-                            <option selected>Seleccione...</option>
-                            <option value="Médico general">Médico general</option>
-                            <option value="Oftalmología">Oftalmología</option>
-                            <option value="Pediatría">Pediatría</option>
-                            <option value="Ginecología">Ginecología</option>
-                            <option value="Odontología">Odontología</option>
-                          </select>
-                        </div>
-          
-                      </form>
+                      <div class="mb-3 col-12">
+                        <label for="inputIdA" class="form-label"
+                          >Tipo de identificación</label
+                        >
+                        <select
+                          name=""
+                          id="inputIdA"
+                          class="form-select"
+                          disabled
+                        >
+                          <option selected>Seleccione...</option>
+                          <option value="Cédula de ciudadanía">
+                            Cédula de ciudadanía
+                          </option>
+                          <option value="Cédula de extranjería">
+                            Cédula de extranjería
+                          </option>
+                          <option value="Tarjeta de identidad">
+                            Tarjeta de identidad
+                          </option>
+                          <option value="Registro civil">Registro civil</option>
+                          <option value="Otro">Otro</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3 col-12">
+                        <label for="inputNumA" class="form-label"
+                          >Número de identificación</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="inputNumA"
+                          required
+                          disabled
+                        />
+                      </div>
+
+                      <div class="mb-3 col-12">
+                        <label for="inputNombreA" class="form-label"
+                          >Paciente</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputNombreA"
+                          required
+                        />
+                      </div>
+
+                      <div class="mb-3 col-12">
+                        <label for="inputFechaA" class="form-label"
+                          >Fecha</label
+                        >
+                        <input
+                          type="datetime-local"
+                          class="form-control"
+                          id="inputFechaA"
+                          required
+                        />
+                      </div>
+
+                      <div class="mb-3 col-12">
+                        <label for="inputEspA" class="form-label"
+                          >Especialidad</label
+                        >
+                        <select name="" id="inputEspA" class="form-select">
+                          <option selected>Seleccione...</option>
+                          <option value="Médico general">Médico general</option>
+                          <option value="Oftalmología">Oftalmología</option>
+                          <option value="Pediatría">Pediatría</option>
+                          <option value="Ginecología">Ginecología</option>
+                          <option value="Odontología">Odontología</option>
+                        </select>
+                      </div>
+                    </form>
                   </div>
                   <div class="modal-footer">
                     <input
@@ -256,7 +265,6 @@
                       type="button"
                       class="btn btn-secondary"
                       data-bs-dismiss="modal"
-                      
                     >
                       Cerrar
                     </button>
@@ -264,6 +272,33 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container notificacion-toast">
+        <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button> -->
+  
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div
+            id="liveToast"
+            class="toast hide"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header">
+              <!-- <img src="..." class="rounded me-2" alt="..."> -->
+              <strong class="me-auto">Notificación!</strong>
+              <small>1 mins ago</small>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="toast-body">Registro creado éxitosamente!</div>
           </div>
         </div>
       </div>
@@ -281,5 +316,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="funcionesAfiliados.js"></script>
+
+    
   </body>
 </html>

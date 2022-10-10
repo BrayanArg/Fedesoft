@@ -37,6 +37,9 @@ function crear(e) {
     if (elementIndex == -1) {
       personas.push(persona);
       localStorage.setItem("independientes", JSON.stringify(personas));
+      let toastLiveExample = document.getElementById("liveToast");
+      var toast = new bootstrap.Toast(toastLiveExample);    
+      toast.show();
     } else {
       alert(
         "Usuario existente, por favor digite otro número de identificación."

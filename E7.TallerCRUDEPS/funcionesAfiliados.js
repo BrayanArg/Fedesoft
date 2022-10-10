@@ -1,6 +1,9 @@
-$(document).ready(function () {
-  $("#tabla-afiliados").DataTable();
-});
+
+      $(document).ready(async function () {
+        await leer();
+        $("#tabla-afiliados").DataTable();
+      });
+    
 
 document.getElementById("formulario").addEventListener("submit", crear);
 let numActualizar ;
@@ -30,6 +33,9 @@ function crear(e) {
     if (elementIndex == -1) {
       pacientes.push(paciente);
       localStorage.setItem("afiliados", JSON.stringify(pacientes));
+      let toastLiveExample = document.getElementById("liveToast");
+      var toast = new bootstrap.Toast(toastLiveExample);    
+      toast.show();
     } else {
       alert(
         "Usuario existente, por favor digite otro número de identificación."
